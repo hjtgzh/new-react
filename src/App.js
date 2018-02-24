@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Route, Link, Switch } from 'react-router-dom';
 import { Menu, Icon } from 'antd';
+import Dashboard from './pages/dashboard/Dashboard';
 import Home from './pages/home/Home';
+import List from './pages/list/List';
 import './App.css';
 
 const SubMenu = Menu.SubMenu;
@@ -43,7 +45,9 @@ class App extends Component {
             <Menu.Item key="1">
               <Link to={`/home`}>首页</Link>
             </Menu.Item>
-            <Menu.Item key="2">Option 2</Menu.Item>
+            <Menu.Item key="2">
+              <Link to={`/list`}>列表</Link>
+            </Menu.Item>
             <Menu.Item key="3">Option 3</Menu.Item>
             <Menu.Item key="4">Option 4</Menu.Item>
           </SubMenu>
@@ -77,7 +81,9 @@ class App extends Component {
         </Menu>
         <div className="app-content">
           <Switch>
+            <Route exact path="/" component={Dashboard} />
             <Route path={`/home`} component={Home} />
+            <Route path={`/list`} component={List} />
           </Switch>
         </div>
       </div>
