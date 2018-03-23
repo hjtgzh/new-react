@@ -1,6 +1,5 @@
 //@flow
 import * as React from 'react';
-import { Button } from 'antd';
 import './Dashboard.css';
 
 type Props = {};
@@ -11,8 +10,11 @@ class Home extends React.PureComponent<Props, State> {
   add = (a: number, b: number) => {
     return a + b;
   };
+  dads = () => {
+    return '22';
+  };
   render() {
-    return <div className="dashboard">dashboard{this.add('2', 3)}</div>;
+    return <div className="dashboard">dashboard{this.add(4, 3)}</div>;
   }
 }
 export default Home;

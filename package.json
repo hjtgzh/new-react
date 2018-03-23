@@ -11,6 +11,9 @@
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.0"
   },
+  "lint-staged": {
+    "src/**/*.{js,jsx,json,css}": ["prettier --single-quote --write", "git add"]
+  },
   "scripts": {
     "build-css": "node-sass-chokidar src/ -o src/",
     "watch-css":
@@ -21,13 +24,17 @@
     "build": "npm-run-all build-css build-js",
     "test": "react-app-rewired test --env=jsdom",
     "eject": "react-app-rewired eject",
-    "flow": "flow --show-all-errors"
+    "flow": "flow --show-all-errors",
+    "precommit": "lint-staged"
   },
   "devDependencies": {
     "babel-plugin-import": "^1.6.3",
     "flow-bin": "^0.66.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.0.0",
     "node-sass-chokidar": "0.0.3",
     "npm-run-all": "^4.1.2",
+    "prettier": "^1.10.2",
     "react-app-rewire-less": "^2.1.0",
     "react-app-rewired": "^1.4.1"
   }
